@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+    <style>
+      body {
+        background: black;
+        color: aliceblue;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1><strong>Register Your Account With Travello</strong></h1>
+    <form action="register" method="POST">
+      {% csrf_token %}
+      <input type="text" name="first_name" placeholder="First_Name" /><br />
+      <input type="text" name="last_name" placeholder="Last_Name" /><br />
+      <input type="text" name="username" placeholder="username" /><br />
+      <input type="email" name="email" placeholder="Email" /><br />
+      <input type="password" name="password1" placeholder="Password" /><br />
+      <input
+        type="password"
+        name="password2"
+        placeholder="Re-type Password"
+      /><br />
+      <input type="Submit" />
+    </form>
+    <div>
+        {% for message in messages %}
+        <h3>
+            {{message}}
+        </h3>
+        {% endfor %}
+    </div>
+  </body>
+</html>
